@@ -1,0 +1,20 @@
+#Credentials Template:
+
+devices :
+ - ip_address:  <switch IP address>
+   user:        <admin username>
+   password:    <admin password>
+   change_user: <Username where password needs to be changed for>
+   change_pass: <New password for the user>
+   past_snmp:   <OLD SNMP Community String>
+   new_snmp:    <NEW SNMP Community String>
+ - ip_address:  <switch IP address>
+   user:        <admin username>
+   password:    <admin password>
+   change_user: <Username where password needs to be changed for>
+   change_pass: <New password for the user>
+   past_snmp:   <OLD SNMP Community String>
+   new_snmp:    <NEW SNMP Community String>
+
+
+

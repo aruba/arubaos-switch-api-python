@@ -1,0 +1,11 @@
+user: #<username>
+password: #<password>
+ipadd:
+# - <ipadd>
+# - <ipadd>
+
+tunneled_node : {"server_configured": True, "controller_ip": "<controller-ip>", "server_status": True, "mode": "PORT"}
+
+tunneled_ports : ['ports_list': '1,4-7']
+
+

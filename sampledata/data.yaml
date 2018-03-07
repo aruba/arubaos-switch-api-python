@@ -1,0 +1,42 @@
+user: admin
+password: admin
+ipadd:
+ - 15.129.81.221
+# - <ipadd>
+
+vlan:
+   [{"vlan_id":102,"name":"VLAN102"},
+    {"vlan_id":103,"name":"VLAN103"}
+    ]
+
+port : [{ 'id': '10' , 'name': 'Phone' },
+        { 'id': '11' , 'name': 'Phone' },
+        { 'id': '12' , 'name': 'Employee' },
+        { 'id': '13' , 'name': 'Employee' }
+        ]
+
+lacpport:  [{"port_id": "10" ,  "trunk_group": "trk1"},
+            {"port_id": "11" ,  "trunk_group": "trk1"},
+            {"port_id": "12" ,  "trunk_group": "trk2"},
+           {"port_id": "13" ,  "trunk_group": "trk2"}]
+
+vlanport : [
+            {'vlan_id':102,'port_id':'trk1','port_mode':'POM_TAGGED_STATIC'},
+            {'vlan_id':103,'port_id':'trk2','port_mode':'POM_TAGGED_STATIC'}
+            ]
+
+deviceprofile1: {"device_profile_name": "Phones", "untagged_vlan_id": 1}
+deviceidentity:  {"device_name": "Phones", "oui": "0012bb", "is_device_profile_enabled": true, "associated_device_profile": "Phones"}
+
+ratelimitport : {"port_id": "2"}
+
+snmphosts: {"host_ip": {"version":"IAV_IP_V4","octets":"10.80.2.164"}, "community":"public", "trap_level": "STL_ALL"}
+
+
+linkport: {"port_id": "5", "is_enabled": false}
+cablediag: { "port_id": "12" }
+portlist: ['2','3','9']
+
+trunkport: { "port_id": "11" ,  "trunk_group": "trk10" }
+
+macaddress: 2c4138-7f2705

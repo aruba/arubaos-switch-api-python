@@ -1,0 +1,17 @@
+{%- if values.jumbo %}
+jumbo max-frame-size {{ values.underlay_vlan }} 
+vlan {{ values.underlay_vlan }} jumbo 
+{%- endif %}
+vxlan enable
+{%- if values.jumbo %}
+vxlan udp {{ values.udp_port }} 
+{%- endif %}
+virtual-network {{ values.vn_id }} {{ values.overlay_vlan }} {{ values.vn_name }}
+interface tunnel {{ values.tunnel_id }}
+{%- if values.tunnel_name %}
+tunnel name {{ values.tunnel_name }}
+{%- endif %}
+tunnel mode vxlan
+tunnel source {{ values.vxlan_source }}
+tunnel destination {{ values.vxlan_destination }}
+vxlan tunnel {{ values.tunnel_id }} overlay-vlan {{ values.overlay_vlan }}

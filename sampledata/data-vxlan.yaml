@@ -1,0 +1,8 @@
+user: #<username>
+password: #<password>
+ipadd:
+# - <ip_address>
+# - <ip_address>
+#example_data
+vxlan : [{ 'vn_id': '10', 'vn_name': 'vn-test', 'overlay_vlan': '530', 'tunnel_id':'1', 'tunnel_name': 'VXLAN_Guests', 'vxlan_source': '192.168.2.2', 'vxlan_destination': '192.168.2.3'},
+{ 'vn_id': '11', 'vn_name': 'vn-test1', 'overlay_vlan': '531', 'tunnel_id':'2', 'tunnel_name': 'VXLAN_Guests1', 'vxlan_source': '192.168.2.2', 'vxlan_destination': '192.168.2.4'}]
