@@ -77,3 +77,32 @@ def update_device_user(baseurl, cookie_header, password, user):
         return response.status_code
     else:
         print("User Update Failed - " + str(response))
+
+
+def upload_tacert(baseurl, cookie_header, cert_name, cert_file):
+    """
+    This function uploads the tacert to the switches.
+
+    :param baseurl: The resource URL for the device, in String format
+    :param cookie_header: The login cookie for the session
+    :param cert_name: Name of the TA cert
+    :param cert_file: Path of teh cert file
+    :return: N/A
+    """
+    url = baseurl + 'ta_profiles'
+    # print(url)
+    headers = {'cookie': cookie_header}
+    with open(cert_file, 'rb') as file:
+        cert_base64 = base64.b64encode(file.read()).decode('utf-8')
+
+    data = {
+        "ta_name" : cert_name,
+        "ta_certificate_base64_encoded_pem" : cert_base64
+    }
+    response = requests.post(url, verify=False, data=json.dumps(data), headers=headers)
+    print("response status is", response.status_code)
+    if response.status_code == 201:
+        print("TA cert upload is successful")
+        return response.status_code
+    else:
+        print("TA cert upload failed, status code:" + str(response))
