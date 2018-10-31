@@ -3,7 +3,7 @@ chardet==3.0.4
 idna==2.6
 pyaml==17.10.0
 PyYAML==3.12
-requests==2.18.4
+requests==2.20.0
 urllib3==1.22
 xlrd==1.1.0
 XlsxWriter==1.0.2
