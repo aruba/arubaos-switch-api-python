@@ -25,7 +25,7 @@ vlanport : [
             {'vlan_id':103,'port_id':'trk2','port_mode':'POM_TAGGED_STATIC'}
             ]
 
-deviceprofile1: {"device_profile_name": "Phones", "untagged_vlan_id": 1}
+deviceprofile1: {"device_profile_name": "Phones", "tagged_vlan_id": 102}
 deviceidentity:  {"device_name": "Phones", "oui": "0012bb", "is_device_profile_enabled": true, "associated_device_profile": "Phones"}
 
 ratelimitport : {"port_id": "2"}
