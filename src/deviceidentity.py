@@ -32,7 +32,8 @@ def create_deviceprofile(baseurl, deviceprofile1, cookie_header):
         print("Device Profile: {} creation is not successful" .format(deviceprofile1['device_profile_name']))
 
     cmd1 = "configure terminal"
-    cmd2 = "device-profile name " + deviceprofile1['device_profile_name'] + " tagged-vlan 102"
+    cmd2 = "device-profile name " + deviceprofile1['device_profile_name'] + " tagged-vlan " \
+           + str(deviceprofile1['tagged_vlan_id'])
     common.anycli(baseurl, cmd1, cookie_header)
     common.anycli(baseurl, cmd2, cookie_header)
 
