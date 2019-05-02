@@ -6,7 +6,7 @@ from tools import ExcelOps
 
 def monitor_poe(baseurl, cookie_header):
     """
-    Write POE details to an excel sheet - MonitorPOE.xlsx in teh same folder
+    Write POE details to an excel sheet - MonitorPOE.xlsx in the same folder
     :param baseurl: imported baseurl variable
     :param cookie_header: Parse cookie resulting from successful loginOS.login_os(baseurl)
     :return: Write below POE details of each port to excel MonitorPOE.xlsx if exits,
