@@ -101,7 +101,7 @@ accepted.
 
 ## Additional Notes
 
-> **Note:** Please don't file an issue to ask a question. Please use reach out to us via email or disucssion forums.
+> **Note:** Please don't file an issue to ask a question. Please reach out to us via email or disucssion forums.
 
 ### Resources
 
