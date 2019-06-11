@@ -106,3 +106,46 @@ def upload_tacert(baseurl, cookie_header, cert_name, cert_file):
         return response.status_code
     else:
         print("TA cert upload failed, status code:" + str(response))
+
+
+def get_system_time(baseurl, cookie_header):
+    """"
+    This function returns the host system time configuration
+
+    :param baseurl: The resource URL for the device, in String format
+    :param cookie_header: the login cookie for the session
+    :return Json data containing the system time configuration
+    """
+    url = baseurl + 'system/time'
+    headers = {'cookie': cookie_header}
+    response = requests.get(url, verify=False, headers=headers)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return None
+
+
+def print_system_time_config(values):
+    """
+    Function to print the system time configuration
+    :param values: json response from GET call containing the values to be displayed
+    :return N/A
+            prints to the screen the configuration in list form
+    """
+    print('Local UTC Offset: ' + str(values['local_utc_offset_in_seconds']))
+    if values['auto_adjust_dst']:
+         print('Automatically adjust DST changes: Yes')
+    else:
+         print('Automatically adjust DST changes: No')
+    print('DST Begins on Day: ' + str(values['custom_dst_begins_rule']['day_of_month']))
+    print('Of Month: ' + str(values['custom_dst_begins_rule']['month']))
+    print('DST Ends on Day: ' + str(values['custom_dst_end_rule']['day_of_month']))
+    print('Of Month: ' + str(values['custom_dst_end_rule']['month']))
+    if values['time_servers']:
+        print(values['time_servers'])
+    if values['use_sntp_unicast']:
+        print('Using SNTP unicast')
+    else:
+        print('Not using SNTP unicast')
+    print('Time Server Protocol: ' + str(values['time_server_protocol']))
+    print('\n\n')

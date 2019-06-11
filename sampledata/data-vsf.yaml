@@ -1,0 +1,9 @@
+user: # admin user
+password: # admin password
+ipadd:
+  - #switch ip
+
+member_id: # integer value
+
+link_id: # integer value
+domain_id: # integer value
