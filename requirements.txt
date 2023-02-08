@@ -1,10 +1,10 @@
-certifi==2017.11.5
+certifi>=2022.12.07
 chardet==3.0.4
 idna==2.6
 pyaml==17.10.0
-PyYAML==4.2b1
+PyYAML>=5.4
 requests==2.20.0
-urllib3==1.24.2
+urllib3>=1.25.9
 xlrd==1.1.0
 XlsxWriter==1.0.2
-jinja2==2.10.1
+jinja2>=2.11.3
